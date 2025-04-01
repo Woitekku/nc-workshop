@@ -1,3 +1,33 @@
+### Disclaimer: You do NOT have to use it! This is just an example to let you start smoothly and focus on core aspects of the workshop, which is AI 
+
+There are 3 modules prepared:  
+1. vpc module = https://github.com/Woitekku/nc-vpc-module  
+That module creates basic vpc schema, with public and private subnets, igw, natgw and routing 
+2. r53+acm module = https://github.com/Woitekku/nc-r53-acm-module  
+That module creates r53 zone based on your provided domain and gives you ns records needed to be setup on your isp, in order to delegate domain to route 53
+3. eks module = https://github.com/Woitekku/nc-eks-module  
+That module create eks cluster. It has:
+- dedicated iam role for your team
+- addons like: kube-proxy, coredns, vpc-cni, ebs and efs drivers, cloudwatch observability, node monitoring, cert-manager, kube state metrics, metrics server, prometheus node exporter
+- helm charts: argo-cd (take initial password from k8s secrets), aws load balancer ingress controller, cluster autoscaler, external dns, external secrets
+- 2 managed node groups with taints and tolerations: system and generic
+ 
+Here is one more repo with an example how to use it:  
+https://github.com/Woitekku/nc-workshop
+
+```
+terraform init   
+terraform plan/apply --target module.vpc  
+terraform plan/apply --target module.r53-acm  
+terraform plan/apply
+```
+
+requirements:  
+- terraform (+tfenv, tfswitch, etc.)
+- git
+- pre-commit
+- terraform docs
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
