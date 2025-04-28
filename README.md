@@ -42,19 +42,23 @@ requirements:
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.91.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_eks"></a> [eks](#module\_eks) | git::https://github.com/Woitekku/nc-eks-module.git | n/a |
+| <a name="module_eks"></a> [eks](#module\_eks) | git::https://github.com/Woitekku/nc-eks-module.git | gateway-api-controller |
 | <a name="module_r53-acm"></a> [r53-acm](#module\_r53-acm) | git::https://github.com/Woitekku/nc-r53-acm-module.git | n/a |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | git::https://github.com/Woitekku/nc-vpc-module.git | n/a |
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [aws_ecr_repository.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository) | resource |
 
 ## Inputs
 
