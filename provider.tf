@@ -22,4 +22,12 @@ terraform {
       version = "~> 2.3.6"
     }
   }
+
+  backend "s3" {
+    bucket         = "terraform-state-164820026678-workshop"
+    encrypt        = true
+    region         = "eu-central-1"
+    dynamodb_table = "terraform-locks-164820026678-workshop"
+    key            = "terraform.tfstate"
+  }
 }

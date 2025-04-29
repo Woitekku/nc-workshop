@@ -14,7 +14,6 @@ module "r53-acm" {
 module "eks" {
   source = "git::https://github.com/Woitekku/nc-eks-module.git"
 
-  team_assume_role_principals    = ["arn:aws:iam::164820026678:root"]
   domain                         = "workshop.cichy.io"
   cluster_name                   = "woitekku"
   cluster_version                = "1.32"
@@ -24,4 +23,5 @@ module "eks" {
   vpc_public_subnet_ids          = module.vpc.vpc_public_subnet_ids
   vpc_private_subnet_ids         = module.vpc.vpc_private_subnet_ids
   certificate_arn                = module.r53-acm.certificate_arn
+  team_role_arn                  = aws_iam_role.team.arn
 }
